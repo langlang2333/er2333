@@ -1,0 +1,69 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>无标题文档</title>
+<style>
+.black_overlay{
+         display: none; 
+         position: absolute;  
+         top: 0%;  
+         left: 0%;  
+         width: 100%;  
+         height: 100%;  
+         background-color: #ffffff;  
+         z-index:1001;  
+         -moz-opacity: 0.8;  
+         opacity:.80;  
+         filter: alpha(opacity=80);  
+    } 
+    .white_content {
+        display: none;  
+        position: absolute; 
+        top: 10%; 
+        left: 30%;             
+        background-color: white; 
+        z-index:1002; /* 数字的大小指明了div的相对层，数字大的在上层 */
+        overflow: auto;
+    }
+	</style>
+   <script  type="text/javascript">
+    function openWindow(obj){
+        var qq_or_weixin = "light_qq";
+        switch(obj.id)
+        {
+            case 'contact_weixin':
+            qq_or_weixin = "light_weixin";
+            break;
+            
+            case 'contact_qq':
+            qq_or_weixin = "light_qq";
+            break;
+        }
+        document.getElementById(qq_or_weixin).style.display='block';
+        document.getElementById('fade').style.display='block';
+    }
+    function closeWindow(){
+        document.getElementById('light_weixin').style.display='none';
+        document.getElementById('light_qq').style.display='none';
+        document.getElementById('fade').style.display='none';
+    }
+</script>
+</head>
+
+<body>
+<div class="top_contact_us">
+    <div class="top_telphone"></div>
+    <div class="top_weixin"><a href="#" id="contact_weixin" onclick="openWindow(this)"><img src="u207.png" width="80" height="80" /></a></div>  
+    
+</div>
+<div id="light_qq" class="white_content"> 
+    <img src='img/qq_erweima.png' />  
+</div>
+<div id="light_weixin" class="white_content">  
+    <div class="xcConfirm" id="pop_149941189846826843"><div class="xc_layer"></div><div class="popBox"><div class="ttBox"><a class="clsBtn"></a><span class="tt">输入</span></div><div class="txtBox"><p>请输入<input class="inputBox"></p></div><div class="btnArea"><div class="btnGroup"><a class="sgBtn ok">确定</a></div></div></div></div>
+</div>
+<div id="fade" class="black_overlay"  onClick="closeWindow()">
+</div>
+</body>
+</html>
